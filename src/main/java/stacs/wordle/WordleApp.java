@@ -33,5 +33,10 @@ File textFile = new File("src/test/resources/wordlist-test.txt");
 ArrayList<String> wordlist = loadWordlist("src/test/resources/wordlist-test.txt");
 
         return new ArrayList<String>();
+        for(int index=0; index<wordlist.length; index++){
+            System.out.println(wordlist.get(index));
+            //
+        }
+        
     }
 }
