@@ -19,24 +19,40 @@ public class WordleApp {
 
         
         System.out.println("Welcome to CS5031 - Wordle");
+       try {
+        ArrayList<String> wordlist = loadWordlist("/cs/home/ce57/wordlist-test.txt"); //change to file location
+        for(int index=0; index<wordlist.size(); index++){
+            System.out.println(wordlist.get(index));
+            //
+        }
+        String chosenWord = wordlist.get(((int) (Math.random()*wordlist.size())));
+        System.out.println("chosenWord "+chosenWord);
+       } catch (Exception e) {
+        System.out.println("hi");// TODO: handle exception
+       }
     }
 
 
-File textFile = new File("src/test/resources/wordlist-test.txt");
-            Scanner input  = new Scanner(System.in);
+
    
    
             // Unimplemented skeleton
     // You may refactor this method
     protected static ArrayList<String> loadWordlist(String wordlistPath) throws FileNotFoundException { 
     
-ArrayList<String> wordlist = loadWordlist("src/test/resources/wordlist-test.txt");
+        ArrayList<String> listOfWords = new ArrayList<>();
+        File textFile = new File(wordlistPath);
+        Scanner input  = new Scanner(textFile);
+        while (input.hasNextLine()) {
 
-        return new ArrayList<String>();
-        for(int index=0; index<wordlist.length; index++){
-            System.out.println(wordlist.get(index));
-            //
+            String line = input.nextLine();
+            listOfWords.add(line);
+
         }
+
+        
+        return listOfWords;
+       
         
     }
 }
