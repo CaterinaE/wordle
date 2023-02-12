@@ -10,7 +10,7 @@ public class WordleApp {
   private final String GREEN = "\u001B[42m";
   private final String RESET = "\u001B[0m";
   // enter the letters
-  private Scanner input = new Scanner(System.in);
+  private Scanner input = new Scanner(System.in); 
   boolean winGame = false;
   int attempted = 0;
 
