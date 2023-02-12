@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/usr/local/amazon-corretto-17/lib"/>
-    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter6685822673240231249.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-12T15-55-36_009-jvmRun1 surefire9757262412816388741tmp surefire_04136657914280805989tmp"/>
+    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter8493302343250468785.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-12T16-45-00_173-jvmRun1 surefire16172290302093977892tmp surefire_016891470733520154731tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/cs/home/ce57/Documents/wordle/target/test-classes:/cs/home/ce57/Documents/wordle/target/classes:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/home/ce57/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/home/ce57/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter6685822673240231249.jar"/>
+    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter8493302343250468785.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.5+8-LTS"/>
     <property name="user.name" value="ce57"/>
@@ -52,5 +52,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldWordlist" classname="stacs.wordle.WordleAppTest" time="0.013"/>
+  <testcase name="shouldLoadFile" classname="stacs.wordle.WordleAppTest" time="0.014"/>
 </testsuite>

@@ -14,23 +14,21 @@ import java.nio.file.Files;
  public class WordleAppTest{
     
   @Test
-        public void shouldWordlist() throws java.io.IOException {  
+        public void shouldLoadFile() throws java.io.IOException {  
    
           
          // Path fileName1  = Path.of("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
         
-          String path = "src/test/resources";
-
+          String path = "/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt";
+ 
           File fileName  = new File(path);
           String absolutePath = fileName .getAbsolutePath();
           
-          System.out.println(absolutePath);
+         // System.out.println(absolutePath);
           
-          assertTrue(absolutePath.endsWith("src/test/resources"));
+          assertTrue(absolutePath.endsWith("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt"));
   } 
                    
-
-
 
       }
  
