@@ -1,35 +1,37 @@
 package stacs.wordle;
 
-
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.nio.file.Files;
-  import java.nio.file.Path;
+import java.nio.file.Path;
 
- public class WordleAppTest{
-    
+public class WordleAppTest {
+
+
+
   @Test
-        public void shouldLoadFile() throws java.io.IOException {  
-   
-          
-         // Path fileName1  = Path.of("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
-        
-          String path = "/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt";
- 
-          File fileName  = new File(path);
-          String absolutePath = fileName .getAbsolutePath();
-          
-         // System.out.println(absolutePath);
-          
-          assertTrue(absolutePath.endsWith("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt"));
-  } 
-                   
+public   void  loadWordlist() throws FileNotFoundException { 
 
-      }
+   String[]  wordlist = WordleApp.getWordList("src/test/resources/wordlist-test.txt");
+ assertEquals(3, wordlist.length);
+  
+}
+
+
  
-    
+
+
+
+
+
+ 
+
+
+ 
+}

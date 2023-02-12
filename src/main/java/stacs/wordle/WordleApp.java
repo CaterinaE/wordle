@@ -1,50 +1,63 @@
 package stacs.wordle;
 
 import java.nio.file.Files;
- import java.util.Scanner;
+import java.util.Scanner;
 import java.nio.file.Path;
 
 // Start Java Class
-public class WordleApp{
+public class WordleApp {
   private final String CYAN = "\u001B[43m ";
   private final String GREEN = "\u001B[42m";
   private final String RESET = "\u001B[0m";
-   // enter the letters 
+  // enter the letters
   private Scanner input = new Scanner(System.in);
+  boolean winGame = false;
+  int attempted = 0;
 
+  // word list
+  // Declare the method getWordList to get the word list from the file "words.txt"
+  static String[] getWordList(String path) {
 
-  //word list 
-   // Declare the method getWordList to get the word list from the file "words.txt"
-  private String[] getWordList() {
-   
     try {
 
-        Path fileName  = Path.of("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
-        
-        String s = Files.readString(fileName);
-      // If the file does exist, create the variable words, which is an array, to
-      // store all of the words in the word list in
-      String[] words = s.split("\\s+");
+      Path fileName = Path.of(path);
+      // turn to a string
+      String s = Files.readString(fileName);
+
+       // store all of the words in the word list in
+      String[] wordList = s.split("\\s+");
 
       // Return the word list
-      return words;
-    } 
-    
-    /**This will print out file and/or word not found error handling*/
+      return wordList;
+    }
+
+    /** This will print out file and/or word not found error handling */
     catch (Exception e) {
 
-        System.out.println("Error file didnt load");
+      System.out.println("Error file didnt load");
 
       return null;
     }
   }
 
+  // Declare the method getWord to select a random word from the word list it is
+  // given
+  private String getWord(String[] wordList) {
+
+    int index = (int) (Math.random() * wordList.length);
+
+    // Retrieve the word stored in the array declared as words at the random index
+    // stored in the variable wordIndex
+    String word = wordList[index];
+    // Return the word stored in the variable word
+    return word;
+  }
 
 
   // Declare the method game to run the game
   private void game() {
     // Take a random word from the word list to be guessed by the user
-    String chosenWord = getWord(getWordList());
+    String chosenWord = getWord(getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt"));
 
     // Create a gameboard that stores all of the user's guesses and alerts them if
     // they are correct or wrong
@@ -57,72 +70,38 @@ public class WordleApp{
       for (int j = 0; j < gameBoard[i].length; j++)
         gameBoard[i][j] = "5_|";
 
-
     }
 
-  
-    
-    // Declare variable userWon that will store if a user has won the game
-    boolean winGame = false;
-
-    // Declare the variable attemptNum that will store what attempt the user is on
-    int attemptNum = 0;
-
-    // If the user has not won and hasn't used all of thier six attempts, allow them
-    // to retry
-
-
-    while (!winGame && attemptNum < 5) {
+    // 6 attempts to win game
+    while (!winGame && attempted < 6) {
       // Give the user another attempt by calling the method attempt, and store
       // whether they won or not to the variable userWon
-      winGame = attempt(gameBoard, chosenWord, attemptNum);
+      winGame = attempt(gameBoard, chosenWord, attempted);
 
-      // Increase the user's move by one
-      attemptNum++;
+      // added up the attempts 
+      attempted++;
     }
 
     // If the user did not win after 5 attempts, end the game
     if (!winGame) {
       // End the game
-      endGame(gameBoard, chosenWord,  false);
+      endGame(gameBoard, chosenWord, false);
     }
   }
 
 
-
-  // Declare the method getWord to select a random word from the word list it is
-  // given
-  private String getWord(String[] words) {
-  
- 
-    int wordIndex = (int) (Math.random() * words.length);
-
-    // Retrieve the word stored in the array declared as words at the random index
-    // stored in the variable wordIndex
-    String word = words[wordIndex];
-    // Return the word stored in the variable word
-    return word;
-  }
-
-
-
-
   // Declare the method attempt to allow the user to attempt a new word
   private boolean attempt(String[][] gameBoard, String chosenWord, int attempt) {
-     
- 
+
     // Call printGameBoard to print the gameboard in terminal
     printGameBoard(gameBoard);
 
-   
-
     // Declare the variable loop to loop certain code
-    boolean loop = true;
+    boolean letword = true;
 
     // Loop a piece of code while the variable loop is set to true
-    while (loop) {
+    while (letword) {
       // Ask the user to input a five letter word
-
 
       System.out.print(chosenWord);
 
@@ -130,37 +109,34 @@ public class WordleApp{
       System.out.println("Type a 5 letter word:");
       String answer = input.nextLine();
 
-      
-      // Redirect code based on the variable answer's length
       if (answer.length() > 5) {
-      
+
         System.out.println("The word is more than five letters\n");
       }
 
       else if (answer.length() < 5) {
-        
+
         System.out.println("The word less than five letters\n");
 
       }
 
       else if (answer.equals(chosenWord)) {
-        // If the variable answer is the chosen word, color green and capatalize all
-        // letters in the variable answer and store the variable answer to the gameboard
+
+        // stores answers on board
         for (int i = 0; i < 5; i++)
           gameBoard[attempt][i] = GREEN + Character.toString(answer.charAt(i)).toUpperCase() + RESET;
 
         // End the game
         endGame(gameBoard, chosenWord, true);
 
-        // Return true to alert the program that the user did win
         return true;
-      } 
-      
-      
+      }
+
       else {
+
         // If the variable answer's length is five letters and is not the chosen word,
         // check it against the word list to see if it is a valid word
-        for (String word : getWordList()) {
+        for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt")) {
           // If the variable answer is in the word list, check all letters to see if they
           // are either in the word, and if they are in the correct spot if in the word.
           if (answer.equalsIgnoreCase(word)) {
@@ -195,25 +171,19 @@ public class WordleApp{
           }
         }
 
-        // If the variable answer was not in the word list, alert the user that their
-        // input is invalid
-        System.out.println("Your word was not in the word list!\n");
-        
+        // word not in list
+        System.out.println("Word not found in word list!\n");
+
       }
     }
 
-
-    // Return false to satisfy java syntax
     return false;
   }
 
-
-
-
   // Declare the method printGameBoard to print the gameboard in the terminal
   private void printGameBoard(String[][] gameBoard) {
-    
-    // being of board 
+
+    // being of board
     for (int i = 0; i < gameBoard.length - 1; i++) {
       // Print "| " in terminal
       System.out.print("|");
@@ -225,59 +195,47 @@ public class WordleApp{
       // Print "|" in terminal
       System.out.println("|");
     }
-  
+
   }
-
-
-
-
-
 
   // Declare the method gameEnd to allow the program to end the game
   private void endGame(String[][] gameBoard, String chosenWord, boolean Winner) {
-    
+
     // Call printGameBoard to print the gameboard in terminal
     printGameBoard(gameBoard);
-
 
     // Redirect code based on if user won or not
     if (Winner) {
       // If the user won, alert the user that they won
       System.out.println("\nMagnificent correct word");
- 
-    } 
-    
-    
-    else {
-    
-      // Print the chosen word in the terminal
-      System.out.println("\nIncorrect the word was "  + chosenWord.toUpperCase());
-    
+
     }
 
-  
+    else {
+
+      // Print the chosen word in the terminal
+      System.out.println("\nIncorrect the word was " + chosenWord.toUpperCase());
+
+    }
 
   }
 
-
-
-
-
-
-// Declare the Constructor that will run the first game
+  // Declare the Constructor that will run the first game
   public WordleApp() {
 
     game();
   }
-  
-// Declare the main method that the application will run on launch
+
+  // Declare the main method that the application will run on launch
   public static void main(String[] args) {
 
-
     System.out.println("Welcome to CS5031 - Wordle\n");
+
+ 
+     getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
 
     // Call the Constructor that will run the first game
     WordleApp app = new WordleApp();
   }
-  
+
 }
