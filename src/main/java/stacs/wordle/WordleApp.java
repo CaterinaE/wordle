@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 // Start Java Class
 public class WordleApp {
-  private final String CYAN = "\u001B[43m ";
+  private final String YELLOW = "\u001B[43m ";
   private final String GREEN = "\u001B[42m";
   private final String RESET = "\u001B[0m";
   // enter the letters
@@ -21,6 +21,7 @@ public class WordleApp {
     try {
 
       Path fileName = Path.of(path);
+      
       // turn to a string
       String s = Files.readString(fileName);
 
@@ -41,19 +42,19 @@ public class WordleApp {
   }
 
   // Declare the method getWord to select a random word from the word list it is
-  // given
-  private String getWord(String[] wordList) {
+  public static  String getWord(String[] wordList) {
 
     int index = (int) (Math.random() * wordList.length);
 
-    // Retrieve the word stored in the array declared as words at the random index
     // stored in the variable wordIndex
     String word = wordList[index];
     // Return the word stored in the variable word
     return word;
-  }
+   }
 
 
+
+  
   // Declare the method game to run the game
   private void game() {
     // Take a random word from the word list to be guessed by the user
@@ -124,6 +125,7 @@ public class WordleApp {
 
         // stores answers on board
         for (int i = 0; i < 5; i++)
+
           gameBoard[attempt][i] = GREEN + Character.toString(answer.charAt(i)).toUpperCase() + RESET;
 
         // End the game
@@ -139,24 +141,32 @@ public class WordleApp {
         for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt")) {
           // If the variable answer is in the word list, check all letters to see if they
           // are either in the word, and if they are in the correct spot if in the word.
+        
           if (answer.equalsIgnoreCase(word)) {
             // Check all letters using a for loop to see if they are either in the word, and
             // if they are in the correct spot if in the word.
+
             for (int i = 0; i < 5; i++) {
+
               // Declare the variable letter to store the letter at variable i
               String letter = Character.toString(answer.charAt(i));
 
-              // Check letter to see if they are either in the word, and if they are in the
               // correct spot if in the word.
+
+
               if (letter.equals(chosenWord.substring(i, i + 1))) {
-                // If the variable letter is in the chosen word and is in the same spot compared
+               
                 // to the chosen word, color green and capatalize the variable letter
                 letter = GREEN + letter.toUpperCase() + RESET;
-              } else if (chosenWord.contains(letter)) {
+              }
+              
+              else if (chosenWord.contains(letter)) {
                 // If the variable letter is in the chosen word but is not in the same spot
                 // compared to the chosen word, color yellow and capatalize the variable letter
-                letter = CYAN + letter.toUpperCase() + RESET;
-              } else {
+                letter = YELLOW + letter.toUpperCase() + RESET;
+              }
+              
+              else {
                 // If the variable letter is not in the chosen word and is not in the same spot
                 // compared to the chosen word, only capatalize the variable letter
                 letter = letter.toUpperCase();
@@ -232,7 +242,7 @@ public class WordleApp {
     System.out.println("Welcome to CS5031 - Wordle\n");
 
  
-     getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
+     //getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
 
     // Call the Constructor that will run the first game
     WordleApp app = new WordleApp();
