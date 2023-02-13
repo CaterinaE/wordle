@@ -5,15 +5,15 @@ Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.033 s <<< FAIL
 testGetAttemptWithWinningAnswer  Time elapsed: 0.005 s  <<< ERROR!
 java.lang.Error: 
 Unresolved compilation problems: 
-	GREEN cannot be resolved to a variable
+	The field WordleApp.GREEN is not visible
 	RESET cannot be resolved to a variable
-	GREEN cannot be resolved to a variable
+	The field WordleApp.GREEN is not visible
 	RESET cannot be resolved to a variable
-	GREEN cannot be resolved to a variable
+	The field WordleApp.GREEN is not visible
 	RESET cannot be resolved to a variable
-	GREEN cannot be resolved to a variable
+	The field WordleApp.GREEN is not visible
 	RESET cannot be resolved to a variable
-	GREEN cannot be resolved to a variable
+	The field WordleApp.GREEN is not visible
 	RESET cannot be resolved to a variable
 
 	at stacs.wordle.WordleAppTest.testGetAttemptWithWinningAnswer(WordleAppTest.java:60)

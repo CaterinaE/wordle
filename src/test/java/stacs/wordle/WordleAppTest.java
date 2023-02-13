@@ -57,11 +57,11 @@ public class WordleAppTest {
     int attempt = 0;
     boolean result = WordleApp.getAttempt(boardGame, chosenWord, attempt);
     assertTrue(result);
-    assertEquals(GREEN + "A" + RESET, boardGame[attempt][0]);
-    assertEquals(GREEN + "P" + RESET, boardGame[attempt][1]);
-    assertEquals(GREEN + "P" + RESET, boardGame[attempt][2]);
-    assertEquals(GREEN + "L" + RESET, boardGame[attempt][3]);
-    assertEquals(GREEN + "E" + RESET, boardGame[attempt][4]);
+    assertEquals(WordleApp.GREEN + "A" + RESET, boardGame[attempt][0]);
+    assertEquals(WordleApp.GREEN + "P" + RESET, boardGame[attempt][1]);
+    assertEquals(WordleApp.GREEN + "P" + RESET, boardGame[attempt][2]);
+    assertEquals(WordleApp.GREEN + "L" + RESET, boardGame[attempt][3]);
+    assertEquals(WordleApp.GREEN + "E" + RESET, boardGame[attempt][4]);
   }
  
 

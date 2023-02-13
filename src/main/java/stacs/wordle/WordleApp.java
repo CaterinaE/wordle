@@ -1,5 +1,4 @@
 package stacs.wordle;
-
 import java.nio.file.Files;
 import java.util.Scanner;
 import java.nio.file.Path;
@@ -7,8 +6,8 @@ import java.nio.file.Path;
  * This is an exercise for Practical 1, will print out a board game with 5 letter  word to enter to start the game
  * @author 220026574
  */
-
 public class WordleApp {
+  //the letter colors for the game
   private final static String YELLOW = "\u001B[43m ";
   private final static String GREEN = "\u001B[42m";
   private final static String RESET = "\u001B[0m";
@@ -17,13 +16,13 @@ public class WordleApp {
   private static Scanner input = new Scanner(System.in);
   static boolean winGame = false;
   static int attempted = 0;
-    static boolean letword = true;
+  static boolean letword = true;
 
   // getWordList method to get the file to use for the word list
   static String[] getWordList(String path) {
 
     try {
-
+       //this  is the path of the text file 
       Path fileName = Path.of(path);
 
       // turn to a string
@@ -107,17 +106,18 @@ public class WordleApp {
           // are either in the word, and if they are in the correct spot if in the word.
           if (answer.equalsIgnoreCase(word)) {
             // Check all letters using a for loop to see if they are either in the word, and
+
             // if they are in the correct spot if in the word.
 
             for (int i = 0; i < 5; i++) {
 
-              // Declare the variable letter to store the letter at variable i
+              // store the letter at var i
               String letter = Character.toString(answer.charAt(i));
 
               // correct spot if in the word.
               if (letter.equals(chosenWord.substring(i, i + 1))) {
 
-                // to the chosen word, color green and capatalize the variable letter
+                //the chosen word green and capatalizein the game board
                 letter = GREEN + letter.toUpperCase() + RESET;
               }
 
@@ -164,7 +164,7 @@ public class WordleApp {
 
       System.out.print("| ");
 
-      // Print row i of the boardGame in terminal
+      // Will print the row i of the boardGame to the terminal, leaves the space
       for (int j = 0; j < boardGame[i].length; j++)
         System.out.print(boardGame[i][j] + " ");
 
@@ -184,12 +184,13 @@ public class WordleApp {
     // Will store the input of the guesses enter
     String[][] boardGame = new String[6][5];
 
-    // Fill the boardGame with temporary placeholders
+    // This will fill the boardGame with temporary placeholders before the game is played this is done for the look of the board
     for (int i = 0; i < boardGame.length; i++) {
 
       /// lines for the letters temp so there will be a board game
       for (int j = 0; j < boardGame[i].length; j++)
-        // will disappear when letters are displayed
+        
+      // will disappear when letters are displayed
         boardGame[i][j] = "_";
 
     }
@@ -197,7 +198,7 @@ public class WordleApp {
     // 6 attempts to win game
     while (!winGame && attempted < 6) {
 
-      // whether they won or not to the variable userWon
+      // when the user won the win or not
       winGame = getAttempt(boardGame, chosenWord, attempted);
 
       // added up the attempts
@@ -251,9 +252,7 @@ public class WordleApp {
   public static void main(String[] args) {
 
     System.out.println("Welcome to CS5031 - Wordle\n");
-
-    // getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
-
+    getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
     // will run the first game
     WordleApp app = new WordleApp();
 
