@@ -65,7 +65,8 @@ public class WordleApp {
      //will display the board game 
     displayBoardGame(boardGame);
 
-      System.out.print(chosenWord);//need to delete 
+      // to test to see if game is working
+      System.out.println(chosenWord);
 
     while (letword) {
  
@@ -85,7 +86,7 @@ public class WordleApp {
 
       }
 
-      else if (answer.equals(chosenWord)) {
+      else if (answer.equalsIgnoreCase(chosenWord)) {
 
         // stores answers on board
         for (int i = 0; i < 5; i++)
@@ -103,7 +104,7 @@ public class WordleApp {
         // When the answer's length is five letters and is not the chosen word in the list
         for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt")) {
 
-          // If the answer/ guess is in the word list 
+          // If the answer is in the word list 
           if (answer.equalsIgnoreCase(word)) {
  
             // if they are in the correct spot if in the word.
