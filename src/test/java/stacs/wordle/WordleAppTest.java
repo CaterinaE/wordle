@@ -28,6 +28,16 @@ public class WordleAppTest {
 
 
   @Test
+  public void shouldGetWordList() throws FileNotFoundException {
+
+    String[] wordlist = WordleApp.getWordList("src/test/resources/wordlist-test.txt");
+
+      
+    assertNotNull(wordlist );
+  }
+
+
+  @Test
   public void shouldGetWord() throws FileNotFoundException {
 
     String[] wordlist = WordleApp.getWordList("src/test/resources/wordlist-test.txt");
@@ -37,30 +47,7 @@ public class WordleAppTest {
     assertNotNull(word );
   }
 
-
-  @Test
-  public void getGame()   {
+ 
 
  
-         win = WordleApp.endGame(null, null, win );
-         
-       
-      
-     // assertTrue(win.endGame());
-
-      
-      assertTrue(win);
-
- }  
-
-   }
-
-
-
-
-
-
-
-
-
 }

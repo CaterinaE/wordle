@@ -241,9 +241,7 @@ public class WordleApp {
 
 
 
-
-
-  // Declare the Constructor that will run the first game
+  //Will run the first game
   public WordleApp() {
 
     game();
