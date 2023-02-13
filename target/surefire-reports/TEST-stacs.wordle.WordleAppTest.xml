@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="stacs.wordle.WordleAppTest" time="0.039" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="stacs.wordle.WordleAppTest" time="0.033" tests="5" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/usr/local/amazon-corretto-17/lib"/>
-    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter5904781455859190298.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-13T01-27-54_027-jvmRun1 surefire14527826035442201072tmp surefire_011238568676664208617tmp"/>
+    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter12661229299028877814.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-13T16-27-59_793-jvmRun1 surefire671841050471805675tmp surefire_04434952493225612308tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/cs/home/ce57/Documents/wordle/target/test-classes:/cs/home/ce57/Documents/wordle/target/classes:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/home/ce57/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/home/ce57/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter5904781455859190298.jar"/>
+    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter12661229299028877814.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.5+8-LTS"/>
     <property name="user.name" value="ce57"/>
@@ -52,8 +52,25 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldGetWordList" classname="stacs.wordle.WordleAppTest" time="0.023"/>
+  <testcase name="shouldGetWordList" classname="stacs.wordle.WordleAppTest" time="0.016"/>
+  <testcase name="testGetAttemptWithWinningAnswer" classname="stacs.wordle.WordleAppTest" time="0.005">
+    <error message="Unresolved compilation problems: &#10;	GREEN cannot be resolved to a variable&#10;	RESET cannot be resolved to a variable&#10;	GREEN cannot be resolved to a variable&#10;	RESET cannot be resolved to a variable&#10;	GREEN cannot be resolved to a variable&#10;	RESET cannot be resolved to a variable&#10;	GREEN cannot be resolved to a variable&#10;	RESET cannot be resolved to a variable&#10;	GREEN cannot be resolved to a variable&#10;	RESET cannot be resolved to a variable&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problems: 
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+
+	at stacs.wordle.WordleAppTest.testGetAttemptWithWinningAnswer(WordleAppTest.java:60)
+</error>
+  </testcase>
   <testcase name="shouldGetWord" classname="stacs.wordle.WordleAppTest" time="0.002"/>
-  <testcase name="shouldGetRamdomWord" classname="stacs.wordle.WordleAppTest" time="0.001"/>
+  <testcase name="shouldGetRamdomWord" classname="stacs.wordle.WordleAppTest" time="0.002"/>
   <testcase name="loadWordlist" classname="stacs.wordle.WordleAppTest" time="0.002"/>
 </testsuite>

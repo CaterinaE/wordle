@@ -3,8 +3,11 @@ package stacs.wordle;
 import java.nio.file.Files;
 import java.util.Scanner;
 import java.nio.file.Path;
+/**
+ * This is an exercise for Practical 1, will print out a board game with 5 letter  word to enter to start the game
+ * @author 220026574
+ */
 
-// Start Java Class
 public class WordleApp {
   private final static String YELLOW = "\u001B[43m ";
   private final static String GREEN = "\u001B[42m";
@@ -58,20 +61,16 @@ public class WordleApp {
 
 
 
-  // Declare the method attempt to allow the user to attempt a new word
-  public static boolean attempt(String[][] gameBoard, String chosenWord, int attempt) {
+  // The attempt method will allow user to guess a new word
+  public static boolean getAttempt(String[][] boardGame, String chosenWord, int attempt) {
 
-    // Call printGameBoard to print the gameboard in terminal
-    displayBoardGame(gameBoard);
-
-
-    // Loop a piece of code while the variable loop is set to true
-    while (letword) {
-      // Ask the user to input a five letter word
+    displayBoardGame(boardGame);
 
       System.out.print(chosenWord);
 
-      // Declare the variable answer to store the user's input to the variable
+    while (letword) {
+ 
+      //The user will enter 5 letters
       System.out.println("Type a 5 letter word:");
       String answer = input.nextLine();
 
@@ -91,17 +90,17 @@ public class WordleApp {
         // stores answers on board
         for (int i = 0; i < 5; i++)
 
-          gameBoard[attempt][i] = GREEN + Character.toString(answer.charAt(i)).toUpperCase() + RESET;
+          boardGame[attempt][i] = GREEN + Character.toString(answer.charAt(i)).toUpperCase() + RESET;
 
         // End the game
-        endGame(gameBoard, chosenWord, true);
+        endGame(boardGame, chosenWord, true);
 
         return true;
       }
 
       else {
 
-        // If the variable answer's length is five letters and is not the chosen word,
+        // When the answer's length is five letters and is not the chosen word in the list
         for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt")) {
 
           // If the variable answer is in the word list, check all letters to see if they
@@ -116,7 +115,6 @@ public class WordleApp {
               String letter = Character.toString(answer.charAt(i));
 
               // correct spot if in the word.
-
               if (letter.equals(chosenWord.substring(i, i + 1))) {
 
                 // to the chosen word, color green and capatalize the variable letter
@@ -135,11 +133,11 @@ public class WordleApp {
                 letter = letter.toUpperCase();
               }
 
-              // Store the variable letter to the correct spot in the gameboard
-              gameBoard[attempt][i] = letter;
+              // Store the variable letter to the correct spot in the boardGame
+              boardGame[attempt][i] = letter;
             }
 
-            // Return false to alert the program that the user did not win
+            // return false whenn the user didnt win
             return false;
           }
         }
@@ -158,24 +156,24 @@ public class WordleApp {
 
 
 
-
-
-  // Declare the method printGameBoard to print the gameboard in the terminal
-  public static void displayBoardGame(String[][] gameBoard) {
+  //  displayBoardGame
+  public static void displayBoardGame(String[][] boardGame) {
 
     // begining of board
-    for (int i = 0; i < gameBoard.length - 1; i++) {
+    for (int i = 0; i < boardGame.length - 1; i++) {
 
       System.out.print("| ");
 
-      // Print row i of the gameboard in terminal
-      for (int j = 0; j < gameBoard[i].length; j++)
-        System.out.print(gameBoard[i][j] + " ");
+      // Print row i of the boardGame in terminal
+      for (int j = 0; j < boardGame[i].length; j++)
+        System.out.print(boardGame[i][j] + " ");
 
       System.out.println("|");
     }
 
   }
+
+
 
 // game method to run the game
   public static void game() {
@@ -184,15 +182,15 @@ public class WordleApp {
     String chosenWord = getWord(getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt"));
 
     // Will store the input of the guesses enter
-    String[][] gameBoard = new String[6][5];
+    String[][] boardGame = new String[6][5];
 
-    // Fill the gameboard with temporary placeholders
-    for (int i = 0; i < gameBoard.length; i++) {
+    // Fill the boardGame with temporary placeholders
+    for (int i = 0; i < boardGame.length; i++) {
 
       /// lines for the letters temp so there will be a board game
-      for (int j = 0; j < gameBoard[i].length; j++)
+      for (int j = 0; j < boardGame[i].length; j++)
         // will disappear when letters are displayed
-        gameBoard[i][j] = "_";
+        boardGame[i][j] = "_";
 
     }
 
@@ -200,7 +198,7 @@ public class WordleApp {
     while (!winGame && attempted < 6) {
 
       // whether they won or not to the variable userWon
-      winGame = attempt(gameBoard, chosenWord, attempted);
+      winGame = getAttempt(boardGame, chosenWord, attempted);
 
       // added up the attempts
       attempted++;
@@ -209,20 +207,20 @@ public class WordleApp {
     // end the game, didnt win the game
     if (!winGame) {
       // End the game
-      endGame(gameBoard, chosenWord, false);
+      endGame(boardGame, chosenWord, false);
     }
   }
 
  
 
-  // Declare the method gameEnd to allow the program to end the game
-  public static void endGame(String[][] gameBoard, String chosenWord, boolean win) {
+  //allow to end the game
+  public static void endGame(String[][] boardGame, String chosenWord, boolean winGame) {
 
     // will print board game squares
-    displayBoardGame(gameBoard);
+    displayBoardGame(boardGame);
 
-    // Redirect code based on if user won or not
-    if (win) {
+    // if they win the game print this
+    if (winGame) {
 
       //Display incorrect  and then show the correct word
       System.out.println("\nMagnificent correct word");
@@ -231,7 +229,7 @@ public class WordleApp {
 
     else {
 
-      //Display incorrect  and then show the correct word
+      //Display incorrect and then show the correct word
       System.out.println("\nIncorrect the word was " + chosenWord.toUpperCase());
 
     }
@@ -246,8 +244,10 @@ public class WordleApp {
 
     game();
   }
-
-  // will start the game
+/** This will his is the string to print out the words  and the words if they are in the text document
+* @param args 
+ *will start the game
+ */
   public static void main(String[] args) {
 
     System.out.println("Welcome to CS5031 - Wordle\n");

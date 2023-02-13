@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: stacs.wordle.WordleAppTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in stacs.wordle.WordleAppTest
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.033 s <<< FAILURE! - in stacs.wordle.WordleAppTest
+testGetAttemptWithWinningAnswer  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+	GREEN cannot be resolved to a variable
+	RESET cannot be resolved to a variable
+
+	at stacs.wordle.WordleAppTest.testGetAttemptWithWinningAnswer(WordleAppTest.java:60)
+
