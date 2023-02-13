@@ -180,7 +180,7 @@ public class WordleApp {
     String chosenWord = getWord(getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt"));
 
     // Will store the input of the guesses enter
-    String[][] boardGame = new String[5][5];
+    String[][] boardGame = new String[6][5];
 
     // This will fill the boardGame with temporary placeholders before the game is played this is done for the look of the board
     for (int i = 0; i < boardGame.length; i++) {
@@ -236,13 +236,12 @@ public class WordleApp {
   }
 
 
-
-
   //Will run the first game
   public WordleApp() {
 
     game();
   }
+
 /** This will his is the string to print out the words  and the words if they are in the text document
 * @param args 
  *will start the game
@@ -250,6 +249,7 @@ public class WordleApp {
   public static void main(String[] args) {
 
     System.out.println("Welcome to CS5031 - Wordle\n");
+    
     getWordList("/cs/home/ce57/Documents/wordle/src/test/resources/wordlist-test.txt");
     // will run the first game
     WordleApp app = new WordleApp();
