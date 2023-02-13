@@ -1,0 +1,29 @@
+README for Wordle 
+CS5031-Software Engineering Practice 
+13 February 2023 
+Student ID: 220026574 
+
+Runing the program for test 
+
+1. Open terminal in Linux.  
+2. Enter your file path to run the test cases first, (example file: /Documents/wordle).  
+3. Enter the command: “mvn package” to run the test file.  
+4. Will display if the test cases passed or failed 
+
+ 
+Running the program to play Wordle 
+
+1. Open terminal in Linux.  
+2. Enter your file path to run the test cases first, (example file:/Documents/wordle/src/main/java/stacs/wordle).  
+3. Enter the command: “java WordleApp.java” to run the WordleApp file.  
+4. The board game spaces with six entries are presented on the terminal.  The game board consists of six rows of five letters, one row for each word. The user attempts to guess a five-letter word chosen at     random from a list of words stored in a text file. 
+5. Displayed will be “Enter a 5-letter word:” 
+6. A five-letter word must be entered  
+   --If the letter is over or under 5 letters an error message will appear stating the word doesn’t meet the requirements. 
+   --If the word entered isn’t in the word list, then the user will have to try again by entering a different word.  
+7. Six attempts can be made, feedback for each attempt based on whether the letter chosen by the user exists in the word from the word list, and if it exists whether it is in the correct position.  
+8. The feedback is displayed on the game board. 
+9. The letters are displayed in either green, if the letter exists in a word and is in the correct position, yellow if the letter exists in the word but is not in the correct position, or if the letter does not exist in the word it resets to the default color of the terminal. 
+10. The game ends when either the user correctly guesses the word or after the six guesses are entered and the correct answer wasn’t entered, the word is given at the end of the game. 
+
+ 

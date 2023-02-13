@@ -1,13 +1,17 @@
 package stacs.wordle;
+
 import java.nio.file.Files;
 import java.util.Scanner;
 import java.nio.file.Path;
+
 /**
- * This is an exercise for Practical 1, will print out a board game with 5 letter word to enter to start the game
+ * This is an exercise for Practical 1, will print out a board game with 5
+ * letter word to enter to start the game
+ * 
  * @author 220026574
  */
 public class WordleApp {
-  //the letter colors for the game
+  // the letter colors for the game
   private final static String YELLOW = "\u001B[43m";
   private final static String GREEN = "\u001B[42m";
   private final static String RESET = "\u001B[0m";
@@ -22,7 +26,7 @@ public class WordleApp {
   static String[] getWordList(String path) {
 
     try {
-       //this  is the path of the text file 
+      // this is the path of the text file
       Path fileName = Path.of(path);
 
       // turn to a string
@@ -56,22 +60,20 @@ public class WordleApp {
     return word;
   }
 
-  
-
-
   // The attempt method will allow user to guess a new word
   public static boolean getAttempt(String[][] boardGame, String chosenWord, int attempt) {
 
-     //will display the board game 
+    // will display the board game
     displayBoardGame(boardGame);
 
-      // to test to see if game is working
-      System.out.println(chosenWord);
+    // to test to see if game is working
+    // System.out.println(chosenWord);
 
+    // the letters to the word
     while (letword) {
- 
-      //The user will enter 5 letters
-      System.out.println("Type a 5 letter word:");
+
+      // The user will enter 5 letters
+      System.out.println("Enter a 5 letter word:");
       String answer = input.nextLine();
 
       // if the anwser is more than 5 letters
@@ -101,12 +103,13 @@ public class WordleApp {
 
       else {
 
-        // When the answer's length is five letters and is not the chosen word in the list
+        // When the answer's length is five letters and is not the chosen word in the
+        // list
         for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt")) {
 
-          // If the answer is in the word list 
+          // If the answer is in the word list
           if (answer.equalsIgnoreCase(word)) {
- 
+
             // if they are in the correct spot if in the word.
             for (int i = 0; i < 5; i++) {
 
@@ -116,21 +119,23 @@ public class WordleApp {
               // correct spot if in the word.
               if (letter.equals(chosenWord.substring(i, i + 1))) {
 
-                //the chosen word green and capatalize in the game board
+                // the chosen word green and capatalize in the game board
                 letter = GREEN + letter.toUpperCase() + RESET;
               }
 
-             // not in correct spot if in the word.
+              // not in correct spot if in the word.
               else if (chosenWord.contains(letter)) {
-                
-               // When the letter is in the chosen word but not in the correct spotb the color is yellow and capatalize in the game board
-              letter = YELLOW + letter.toUpperCase() + RESET;
-             
-            }
+
+                // When the letter is in the chosen word but not in the correct spotb the color
+                // is yellow and capatalize in the game board
+                letter = YELLOW + letter.toUpperCase() + RESET;
+
+              }
 
               else {
 
-                // If the letter is not the  chosen word and not have the same letters as the chosen word
+                // If the letter is not the chosen word and not have the same letters as the
+                // chosen word
                 letter = letter.toUpperCase();
               }
 
@@ -149,13 +154,11 @@ public class WordleApp {
       }
     }
 
-   //not correct answer
+    // not correct answer
     return false;
   }
 
-
-
-  //  displayBoardGame will print out the board 
+  // displayBoardGame will print out the board
   public static void displayBoardGame(String[][] boardGame) {
 
     // begining of board
@@ -172,9 +175,7 @@ public class WordleApp {
 
   }
 
-
-
-// game method to run the game
+  // game method to run the game
   public static void game() {
 
     // Take a random word from the word list to be guessed by the user
@@ -183,13 +184,14 @@ public class WordleApp {
     // Will store the input of the guesses enter
     String[][] boardGame = new String[6][5];
 
-    // This will fill the boardGame with temporary placeholders before the game is played this is done for the look of the board
+    // This will fill the boardGame with temporary placeholders before the game is
+    // played this is done for the look of the board
     for (int i = 0; i < boardGame.length; i++) {
 
       /// lines for the letters temp so there will be a board game
       for (int j = 0; j < boardGame[i].length; j++)
-        
-      // will disappear when letters are displayed
+
+        // will disappear when letters are displayed
         boardGame[i][j] = "_";
 
     }
@@ -211,9 +213,7 @@ public class WordleApp {
     }
   }
 
- 
-
-  //allow to end the game
+  // allow to end the game
   public static void endGame(String[][] boardGame, String chosenWord, boolean winGame) {
 
     // will print board game squares
@@ -222,35 +222,37 @@ public class WordleApp {
     // if they win the game print this
     if (winGame) {
 
-      //Display incorrect  and then show the correct word
+      // Display incorrect and then show the correct word
       System.out.println("\nMagnificent correct word");
 
     }
 
     else {
 
-      //Display incorrect and then show the correct word
+      // Display incorrect and then show the correct word
       System.out.println("\nIncorrect the word was " + chosenWord.toUpperCase());
 
     }
 
   }
 
-
-  //Will run the first game
+  // Will run the first game
   public WordleApp() {
 
     game();
   }
 
-/** This will his is the string to print out the words  and the words if they are in the text document
-* @param args 
- *will start the game
- */
+  /**
+   * This will his is the string to print out the words and the words if they are
+   * in the text document
+   * 
+   * @param args
+   *             will start the game
+   */
   public static void main(String[] args) {
 
     System.out.println("Welcome to CS5031 - Wordle\n");
-    
+
     getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt");
     // will run the first game
     WordleApp app = new WordleApp();
