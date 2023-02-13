@@ -1,14 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: stacs.wordle.WordleAppTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.033 s <<< FAILURE! - in stacs.wordle.WordleAppTest
-testDisplayBoardGame  Time elapsed: 0.005 s  <<< ERROR!
-java.lang.Error: 
-Unresolved compilation problems: 
-	ByteArrayOutputStream cannot be resolved to a type
-	ByteArrayOutputStream cannot be resolved to a type
-	The method setOut(java.io.PrintStream) in the type System is not applicable for the arguments (PrintStream)
-	PrintStream cannot be resolved to a type
-
-	at stacs.wordle.WordleAppTest.testDisplayBoardGame(WordleAppTest.java:62)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in stacs.wordle.WordleAppTest

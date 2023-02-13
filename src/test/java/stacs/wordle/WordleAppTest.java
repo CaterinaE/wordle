@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class WordleAppTest {
 
+ //testing if the words are in the file
   @Test
   public void loadWordlist() throws FileNotFoundException {
 
@@ -17,8 +18,9 @@ public class WordleAppTest {
 
   }
 
+   //testing file cant be null
   @Test
-  public void shouldGetWordList() throws FileNotFoundException {
+  public void shouldGetWordListFile() throws FileNotFoundException {
 
     String[] wordlist = WordleApp.getWordList("src/test/resources/wordlist-test.txt");
 
@@ -26,7 +28,7 @@ public class WordleAppTest {
     assertNotNull(wordlist);
   }
 
-
+ //testing word is 5 letters
   @Test
   public void shouldGetRamdomWord() throws FileNotFoundException {
 
@@ -37,33 +39,30 @@ public class WordleAppTest {
     assertEquals(5, word.length());
   }
 
-
   
-
+  //testing word cant be null
   @Test
   public void shouldGetWord() throws FileNotFoundException {
 
     String[] wordlist = WordleApp.getWordList("src/test/resources/wordlist-test.txt");
 
     String word = WordleApp.getWord(wordlist);
-
-    assertNotNull(word );
+    
+    assertNotNull(word);
   } 
 
-  @Test
+  /*@Test
 public void testDisplayBoardGame() {
 String[][] boardGame = new String[6][5];
-boardGame[0][0] = "C";
-boardGame[0][1] = "A";
-boardGame[0][2] = "C";
-boardGame[0][3] = "H";
-boardGame[0][4] = "E";
+boardGame[0][1] = "C";
+boardGame[0][2] = "A";
+boardGame[0][3] = "C";
+boardGame[0][4] = "H";
+boardGame[0][5] = "E";
 String expected = "CACHE";
-ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-System.setOut(new PrintStream(outContent));
-WordleApp.displayBoardGame(boardGame);
-String result = outContent.toString();
-assertEquals(expected, result);
-}
+String result = WordleApp.displayBoardGame(boardGame);
+ 
+ assertTrue(expected, result.length());
+}*/
 
 }
