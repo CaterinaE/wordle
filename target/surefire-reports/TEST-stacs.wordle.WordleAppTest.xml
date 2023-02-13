@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/usr/local/amazon-corretto-17/lib"/>
-    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter15165296002444581222.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-13T16-53-32_092-jvmRun1 surefire3169814091151169865tmp surefire_07656202113478712795tmp"/>
+    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter11659078017460678796.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-13T17-38-01_433-jvmRun1 surefire3295283263860754108tmp surefire_018126792903697322179tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/cs/home/ce57/Documents/wordle/target/test-classes:/cs/home/ce57/Documents/wordle/target/classes:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/home/ce57/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/home/ce57/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter15165296002444581222.jar"/>
+    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter11659078017460678796.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.5+8-LTS"/>
     <property name="user.name" value="ce57"/>
@@ -53,24 +53,18 @@
     <property name="java.class.version" value="61.0"/>
   </properties>
   <testcase name="shouldGetWordList" classname="stacs.wordle.WordleAppTest" time="0.016"/>
-  <testcase name="testGetAttemptWithWinningAnswer" classname="stacs.wordle.WordleAppTest" time="0.005">
-    <error message="Unresolved compilation problems: &#10;	The field WordleApp.GREEN is not visible&#10;	RESET cannot be resolved to a variable&#10;	The field WordleApp.GREEN is not visible&#10;	RESET cannot be resolved to a variable&#10;	The field WordleApp.GREEN is not visible&#10;	RESET cannot be resolved to a variable&#10;	The field WordleApp.GREEN is not visible&#10;	RESET cannot be resolved to a variable&#10;	The field WordleApp.GREEN is not visible&#10;	RESET cannot be resolved to a variable&#10;" type="java.lang.Error">java.lang.Error: 
+  <testcase name="testDisplayBoardGame" classname="stacs.wordle.WordleAppTest" time="0.005">
+    <error message="Unresolved compilation problems: &#10;	ByteArrayOutputStream cannot be resolved to a type&#10;	ByteArrayOutputStream cannot be resolved to a type&#10;	The method setOut(java.io.PrintStream) in the type System is not applicable for the arguments (PrintStream)&#10;	PrintStream cannot be resolved to a type&#10;" type="java.lang.Error">java.lang.Error: 
 Unresolved compilation problems: 
-	The field WordleApp.GREEN is not visible
-	RESET cannot be resolved to a variable
-	The field WordleApp.GREEN is not visible
-	RESET cannot be resolved to a variable
-	The field WordleApp.GREEN is not visible
-	RESET cannot be resolved to a variable
-	The field WordleApp.GREEN is not visible
-	RESET cannot be resolved to a variable
-	The field WordleApp.GREEN is not visible
-	RESET cannot be resolved to a variable
+	ByteArrayOutputStream cannot be resolved to a type
+	ByteArrayOutputStream cannot be resolved to a type
+	The method setOut(java.io.PrintStream) in the type System is not applicable for the arguments (PrintStream)
+	PrintStream cannot be resolved to a type
 
-	at stacs.wordle.WordleAppTest.testGetAttemptWithWinningAnswer(WordleAppTest.java:60)
+	at stacs.wordle.WordleAppTest.testDisplayBoardGame(WordleAppTest.java:62)
 </error>
   </testcase>
-  <testcase name="shouldGetWord" classname="stacs.wordle.WordleAppTest" time="0.002"/>
+  <testcase name="shouldGetWord" classname="stacs.wordle.WordleAppTest" time="0.001"/>
   <testcase name="shouldGetRamdomWord" classname="stacs.wordle.WordleAppTest" time="0.002"/>
-  <testcase name="loadWordlist" classname="stacs.wordle.WordleAppTest" time="0.002"/>
+  <testcase name="loadWordlist" classname="stacs.wordle.WordleAppTest" time="0.001"/>
 </testsuite>

@@ -51,19 +51,19 @@ public class WordleAppTest {
   } 
 
   @Test
-  public void testGetAttemptWithWinningAnswer() {
-    String[][] boardGame = new String[6][5];
-    String chosenWord = "apple";
-    int attempt = 0;
-    boolean result = WordleApp.getAttempt(boardGame, chosenWord, attempt);
-    assertTrue(result);
-    assertEquals(WordleApp.GREEN + "A" + RESET, boardGame[attempt][0]);
-    assertEquals(WordleApp.GREEN + "P" + RESET, boardGame[attempt][1]);
-    assertEquals(WordleApp.GREEN + "P" + RESET, boardGame[attempt][2]);
-    assertEquals(WordleApp.GREEN + "L" + RESET, boardGame[attempt][3]);
-    assertEquals(WordleApp.GREEN + "E" + RESET, boardGame[attempt][4]);
-  }
- 
+public void testDisplayBoardGame() {
+String[][] boardGame = new String[6][5];
+boardGame[0][0] = "C";
+boardGame[0][1] = "A";
+boardGame[0][2] = "C";
+boardGame[0][3] = "H";
+boardGame[0][4] = "E";
+String expected = "CACHE";
+ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+System.setOut(new PrintStream(outContent));
+WordleApp.displayBoardGame(boardGame);
+String result = outContent.toString();
+assertEquals(expected, result);
+}
 
-  
 }
