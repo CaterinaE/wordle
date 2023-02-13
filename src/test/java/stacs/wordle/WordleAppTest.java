@@ -58,7 +58,7 @@ public void testChosenWord() {
     assertNotNull(chosenWord);
 }
 
-
+  //tried test cases for this but the terminall would freeze
   /*@Test
 public void testDisplayBoardGame() {
 String[][] boardGame = new String[6][5];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="stacs.wordle.WordleAppTest" time="0.03" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="stacs.wordle.WordleAppTest" time="0.033" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/usr/local/amazon-corretto-17/lib"/>
-    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter17435131152392529153.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-13T18-46-23_168-jvmRun1 surefire17356176306400573425tmp surefire_015830449944512074257tmp"/>
+    <property name="sun.java.command" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter10051275385504995366.jar /cs/home/ce57/Documents/wordle/target/surefire 2023-02-13T20-51-10_719-jvmRun1 surefire18244342509105261216tmp surefire_09851068528928289009tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/cs/home/ce57/Documents/wordle/target/test-classes:/cs/home/ce57/Documents/wordle/target/classes:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/home/ce57/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/ce57/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/home/ce57/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/home/ce57/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter17435131152392529153.jar"/>
+    <property name="surefire.real.class.path" value="/cs/home/ce57/Documents/wordle/target/surefire/surefirebooter10051275385504995366.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.5+8-LTS"/>
     <property name="user.name" value="ce57"/>
@@ -52,9 +52,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldGetWord" classname="stacs.wordle.WordleAppTest" time="0.017"/>
-  <testcase name="testChosenWord" classname="stacs.wordle.WordleAppTest" time="0.001"/>
+  <testcase name="shouldGetWord" classname="stacs.wordle.WordleAppTest" time="0.018"/>
+  <testcase name="testChosenWord" classname="stacs.wordle.WordleAppTest" time="0.002"/>
   <testcase name="shouldGetRamdomWord" classname="stacs.wordle.WordleAppTest" time="0.002"/>
-  <testcase name="shouldGetWordListFile" classname="stacs.wordle.WordleAppTest" time="0.001"/>
+  <testcase name="shouldGetWordListFile" classname="stacs.wordle.WordleAppTest" time="0.002"/>
   <testcase name="loadWordlist" classname="stacs.wordle.WordleAppTest" time="0.002"/>
 </testsuite>

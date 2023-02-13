@@ -182,7 +182,7 @@ public class WordleApp {
     String chosenWord = getWord(getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt"));
 
     // Will store the input of the guesses enter
-    String[][] boardGame = new String[6][5];
+    String[][] boardGame = new String[7][5];
 
     // This will fill the boardGame with temporary placeholders before the game is
     // played this is done for the look of the board
