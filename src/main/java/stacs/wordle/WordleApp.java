@@ -9,10 +9,12 @@ public class WordleApp {
   private final static String YELLOW = "\u001B[43m ";
   private final static String GREEN = "\u001B[42m";
   private final static String RESET = "\u001B[0m";
+
   // enter the letters
   private static Scanner input = new Scanner(System.in);
   static boolean winGame = false;
   static int attempted = 0;
+    static boolean letword = true;
 
   // getWordList method to get the file to use for the word list
   static String[] getWordList(String path) {
@@ -62,8 +64,6 @@ public class WordleApp {
     // Call printGameBoard to print the gameboard in terminal
     displayBoardGame(gameBoard);
 
-    // Declare the variable loop to loop certain code
-    boolean letword = true;
 
     // Loop a piece of code while the variable loop is set to true
     while (letword) {
