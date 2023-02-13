@@ -50,6 +50,14 @@ public class WordleAppTest {
     
     assertNotNull(word);
   } 
+@Test
+public void testChosenWord() {
+
+
+    String chosenWord = WordleApp.getWord(WordleApp.getWordList("src/test/resources/wordlist-test.txt"));
+    assertNotNull(chosenWord);
+}
+
 
   /*@Test
 public void testDisplayBoardGame() {
@@ -63,6 +71,18 @@ String expected = "CACHE";
 String result = WordleApp.displayBoardGame(boardGame);
  
  assertTrue(expected, result.length());
+}
+
+@Test
+public void testDisplayBoardGame() {
+    WordleApp wordle = new WordleApp();
+    String[][] boardGame = new String[6][5];
+    for (int i = 0; i < boardGame.length; i++) {
+        for (int j = 0; j < boardGame[i].length; j++)
+            boardGame[i][j] = "_";
+    }
+    WordleApp.displayBoardGame(boardGame);
+    assertNotNull(boardGame);
 }*/
 
 }
