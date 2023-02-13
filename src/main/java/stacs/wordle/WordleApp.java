@@ -86,7 +86,7 @@ public class WordleApp {
 
       }
 
-      else if (answer.equalsIgnoreCase(chosenWord)) {
+      else if (answer.equals(chosenWord)) {
 
         // stores answers on board
         for (int i = 0; i < 5; i++)
@@ -105,7 +105,7 @@ public class WordleApp {
         for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt")) {
 
           // If the answer is in the word list 
-          if (answer.equals(word)) {
+          if (answer.equalsIgnoreCase(word)) {
  
             // if they are in the correct spot if in the word.
             for (int i = 0; i < 5; i++) {
