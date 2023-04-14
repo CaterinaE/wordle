@@ -73,7 +73,7 @@ public class WordleApp {
     while (letword) {
 
       // The user will enter 5 letters
-      System.out.println("Enter a 5 letter word:");
+      System.out.println("\nEnter a 5 letter word:");
       String answer = input.nextLine();
 
       // if the anwser is more than 5 letters
@@ -105,7 +105,7 @@ public class WordleApp {
 
         // When the answer's length is five letters and is not the chosen word in the
         // list
-        for (String word : getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt")) {
+        for (String word : getWordList("../wordle/src/main/resources/wordlist.txt")) {
 
           // If the answer is in the word list
           if (answer.equalsIgnoreCase(word)) {
@@ -179,7 +179,7 @@ public class WordleApp {
   public static void game() {
 
     // Take a random word from the word list to be guessed by the user
-    String chosenWord = getWord(getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt"));
+    String chosenWord = getWord(getWordList("../wordle/src/main/resources/wordlist.txt"));
 
     // Will store the input of the guesses enter
     String[][] boardGame = new String[7][5];
@@ -253,7 +253,7 @@ public class WordleApp {
 
     System.out.println("Welcome to CS5031 - Wordle\n");
 
-    getWordList("/cs/home/ce57/Documents/wordle/src/main/resources/wordlist.txt");
+    getWordList("../wordle/src/main/resources/wordlist.txt");
     // will run the first game
     WordleApp app = new WordleApp();
 

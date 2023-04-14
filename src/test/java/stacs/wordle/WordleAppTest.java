@@ -58,31 +58,5 @@ public void testChosenWord() {
     assertNotNull(chosenWord);
 }
 
-  //tried test cases for this but the terminall would freeze
-  /*@Test
-public void testDisplayBoardGame() {
-String[][] boardGame = new String[6][5];
-boardGame[0][1] = "C";
-boardGame[0][2] = "A";
-boardGame[0][3] = "C";
-boardGame[0][4] = "H";
-boardGame[0][5] = "E";
-String expected = "CACHE";
-String result = WordleApp.displayBoardGame(boardGame);
- 
- assertTrue(expected, result.length());
-}
-
-@Test
-public void testDisplayBoardGame() {
-    WordleApp wordle = new WordleApp();
-    String[][] boardGame = new String[6][5];
-    for (int i = 0; i < boardGame.length; i++) {
-        for (int j = 0; j < boardGame[i].length; j++)
-            boardGame[i][j] = "_";
-    }
-    WordleApp.displayBoardGame(boardGame);
-    assertNotNull(boardGame);
-}*/
 
 }
